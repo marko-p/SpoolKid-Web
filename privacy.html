@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — SpoolKid</title>
+  <meta name="description" content="SpoolKid Privacy Policy" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .policy-hero {
+      padding-top: 120px;
+      padding-bottom: 60px;
+      background: linear-gradient(160deg, #fff 0%, var(--color-bg-alt) 100%);
+    }
+    .policy-body {
+      padding: 60px 0 100px;
+      background: var(--color-bg);
+    }
+    .policy-content {
+      max-width: 720px;
+    }
+    .policy-content h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 32px 0 12px;
+      color: var(--color-text);
+    }
+    .policy-content p,
+    .policy-content li {
+      font-size: 0.97rem;
+      color: var(--color-text-muted);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .policy-content ul {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+    .policy-content a {
+      color: var(--color-primary);
+    }
+    .updated-date {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="brand-icon">🧵</span>
+        SpoolKid
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#how-it-works">How It Works</a></li>
+        <li><a href="https://github.com/marko-p/SpoolKid" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="index.html#download" class="nav-cta">Download</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="policy-hero">
+    <div class="container">
+      <span class="section-label">Legal</span>
+      <h1 class="section-title">Privacy Policy</h1>
+      <p class="updated-date">Last updated: April 2025</p>
+    </div>
+  </section>
+
+  <section class="policy-body">
+    <div class="container">
+      <div class="policy-content">
+
+        <p>
+          SpoolKid ("the App") is a personal inventory tool for tracking 3D printing
+          filament spools. This Privacy Policy explains how your data is handled when
+          you use SpoolKid.
+        </p>
+
+        <h2>Data We Collect</h2>
+        <p>
+          SpoolKid does <strong>not</strong> collect any personal information. All
+          spool data you enter (names, weights, materials, colors) is stored locally
+          on your device and, if enabled, synced to your personal iCloud account via
+          Apple's CloudKit framework.
+        </p>
+
+        <h2>iCloud Sync</h2>
+        <p>
+          If you have iCloud enabled on your device, SpoolKid may sync your spool
+          inventory across your Apple devices using CloudKit. This data is stored in
+          your private iCloud container and is only accessible to you. Apple's
+          <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">
+            Privacy Policy
+          </a> applies to all data stored via iCloud.
+        </p>
+
+        <h2>Third-Party Services</h2>
+        <p>
+          SpoolKid does not use any third-party analytics, advertising, or tracking
+          services. No data is sold or shared with third parties.
+        </p>
+
+        <h2>Notifications</h2>
+        <p>
+          SpoolKid may request permission to send local notifications to alert you
+          when a spool's remaining filament is running low. These notifications are
+          generated on-device and do not involve any external servers.
+        </p>
+
+        <h2>Changes to This Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time. Any changes will be
+          reflected on this page with an updated date.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+          If you have questions about this Privacy Policy, please open an issue on the
+          <a href="https://github.com/marko-p/SpoolKid" target="_blank" rel="noopener">
+            SpoolKid GitHub repository
+          </a>.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-icon">🧵</span>
+        SpoolKid
+      </div>
+      <ul class="footer-links">
+        <li><a href="https://github.com/marko-p/SpoolKid" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+      <p class="footer-copy">&copy; <span id="year"></span> SpoolKid. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+  </script>
+</body>
+</html>

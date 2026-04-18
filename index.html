@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpoolKid — Manage Your 3D Printing Filament</title>
+  <meta name="description" content="SpoolKid is the simplest way to track your 3D printing filament spools. Know what you have, how much is left, and never run out mid-print." />
+  <meta property="og:title" content="SpoolKid — Manage Your 3D Printing Filament" />
+  <meta property="og:description" content="The simplest way to track your 3D printing filament spools on iOS." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#FF6B35" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="nav-brand">
+        <span class="brand-icon">🧵</span>
+        SpoolKid
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="https://github.com/marko-p/SpoolKid" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="#download" class="nav-cta">Download</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <span class="hero-badge">📱 Available on iOS</span>
+        <h1 class="hero-title">
+          Never run out of<br />
+          filament <span class="highlight">mid-print</span>
+        </h1>
+        <p class="hero-desc">
+          SpoolKid helps you track every spool in your collection — how much is left,
+          what material it is, and when it's time to reorder. Simple, fast, and built for makers.
+        </p>
+        <div class="hero-actions">
+          <a href="#download" class="btn-appstore" aria-label="Download on the App Store">
+            <!-- Apple logo -->
+            <svg width="22" height="26" viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M18.068 13.752c-.032-3.24 2.647-4.8 2.768-4.876-1.508-2.206-3.852-2.508-4.684-2.54-1.99-.202-3.888 1.17-4.9 1.17-1.012 0-2.572-1.142-4.228-1.112-2.168.032-4.18 1.258-5.296 3.178C-.052 13.44.948 19.11 3.048 22.248c1.04 1.532 2.284 3.256 3.916 3.194 1.58-.064 2.172-1.016 4.08-1.016 1.908 0 2.452 1.016 4.132.984 1.698-.032 2.772-1.558 3.8-3.096a14.09 14.09 0 0 0 1.726-3.582c-.04-.016-3.302-1.266-3.634-5.02v.04ZM14.9 4.24C15.78 3.17 16.38 1.7 16.22.2c-1.28.056-2.844.854-3.756 1.9-.82.94-1.548 2.458-1.356 3.906 1.428.11 2.892-.726 3.792-1.766Z" fill="white"/>
+            </svg>
+            <span>
+              <span class="btn-text-small">Download on the</span>
+              <span class="btn-text-large">App Store</span>
+            </span>
+          </a>
+          <span class="hero-note">Free to download · iOS 16+</span>
+        </div>
+      </div>
+
+      <!-- Phone Mockup -->
+      <div class="hero-visual" aria-hidden="true">
+        <div class="phone-mockup">
+          <div class="phone-frame">
+            <div class="phone-screen">
+              <div class="phone-notch"></div>
+              <div class="phone-app-content">
+                <div class="phone-app-header">My Spools</div>
+                <div class="phone-app-subheader">6 spools · 2 low</div>
+
+                <div class="spool-card">
+                  <div class="spool-dot" style="background: #E74C3C;"></div>
+                  <div class="spool-info">
+                    <div class="spool-name">Ruby Red PLA</div>
+                    <div class="spool-brand">Hatchbox · 1.75mm</div>
+                    <div class="spool-progress-wrap">
+                      <div class="spool-bar">
+                        <div class="spool-bar-fill" style="width:78%; background:#E74C3C;"></div>
+                      </div>
+                      <div class="spool-pct">78%</div>
+                    </div>
+                  </div>
+                  <div class="spool-weight">780g</div>
+                </div>
+
+                <div class="spool-card">
+                  <div class="spool-dot" style="background: #3498DB;"></div>
+                  <div class="spool-info">
+                    <div class="spool-name">Ocean Blue PETG</div>
+                    <div class="spool-brand">eSUN · 1.75mm</div>
+                    <div class="spool-progress-wrap">
+                      <div class="spool-bar">
+                        <div class="spool-bar-fill" style="width:45%; background:#3498DB;"></div>
+                      </div>
+                      <div class="spool-pct">45%</div>
+                    </div>
+                  </div>
+                  <div class="spool-weight">450g</div>
+                </div>
+
+                <div class="spool-card">
+                  <div class="spool-dot" style="background: #2ECC71;"></div>
+                  <div class="spool-info">
+                    <div class="spool-name">Leaf Green ABS</div>
+                    <div class="spool-brand">Polymaker · 1.75mm</div>
+                    <div class="spool-progress-wrap">
+                      <div class="spool-bar">
+                        <div class="spool-bar-fill" style="width:12%; background:#2ECC71;"></div>
+                      </div>
+                      <div class="spool-pct">12% ⚠️</div>
+                    </div>
+                  </div>
+                  <div class="spool-weight">120g</div>
+                </div>
+
+                <div class="spool-card">
+                  <div class="spool-dot" style="background: #F1C40F;"></div>
+                  <div class="spool-info">
+                    <div class="spool-name">Sunburst Yellow PLA+</div>
+                    <div class="spool-brand">Inland · 1.75mm</div>
+                    <div class="spool-progress-wrap">
+                      <div class="spool-bar">
+                        <div class="spool-bar-fill" style="width:95%; background:#F1C40F;"></div>
+                      </div>
+                      <div class="spool-pct">95%</div>
+                    </div>
+                  </div>
+                  <div class="spool-weight">950g</div>
+                </div>
+
+                <div class="phone-add-btn">+ Add New Spool</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Features</span>
+        <h2 class="section-title">Everything you need to manage your filament</h2>
+        <p class="section-desc">
+          Designed for makers who are tired of guessing how much filament is left on a spool.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📋</div>
+          <h3 class="feature-title">Full Spool Inventory</h3>
+          <p class="feature-desc">
+            Keep track of every spool you own. Record the material type, color, brand,
+            diameter, and how much is remaining.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3 class="feature-title">Remaining Weight Tracker</h3>
+          <p class="feature-desc">
+            Log how much filament you use after each print. SpoolKid automatically
+            calculates what's left so you always know before you start.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔔</div>
+          <h3 class="feature-title">Low-Stock Alerts</h3>
+          <p class="feature-desc">
+            Get notified when a spool drops below your custom threshold.
+            Reorder before you run out, not after.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <h3 class="feature-title">Color &amp; Material Tagging</h3>
+          <p class="feature-desc">
+            Visually identify spools at a glance with color tags. Filter by PLA,
+            PETG, ABS, TPU, and any other material you use.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔍</div>
+          <h3 class="feature-title">Quick Search &amp; Filter</h3>
+          <p class="feature-desc">
+            Find the right spool in seconds. Search by name, brand, or material,
+            and filter by status or filament type.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">☁️</div>
+          <h3 class="feature-title">iCloud Sync</h3>
+          <p class="feature-desc">
+            Your spool data syncs seamlessly across all your Apple devices via iCloud
+            — iPhone, iPad, Mac.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">How It Works</span>
+        <h2 class="section-title">Get started in seconds</h2>
+        <p class="section-desc">
+          No complicated setup. SpoolKid is designed to be fast and intuitive.
+        </p>
+      </div>
+
+      <ol class="steps-list" aria-label="Steps to get started">
+        <li class="step">
+          <div class="step-line-wrap">
+            <div class="step-num" aria-hidden="true">1</div>
+            <div class="step-connector" aria-hidden="true"></div>
+          </div>
+          <div class="step-content">
+            <h3 class="step-title">Add your spools</h3>
+            <p class="step-desc">
+              Tap the <strong>+</strong> button and enter a spool's details: name, brand,
+              material, color, and starting weight. It only takes a few seconds.
+            </p>
+          </div>
+        </li>
+
+        <li class="step">
+          <div class="step-line-wrap">
+            <div class="step-num" aria-hidden="true">2</div>
+            <div class="step-connector" aria-hidden="true"></div>
+          </div>
+          <div class="step-content">
+            <h3 class="step-title">Log each print</h3>
+            <p class="step-desc">
+              After a print completes, open SpoolKid and record the filament used.
+              The app instantly updates the remaining weight on the selected spool.
+            </p>
+          </div>
+        </li>
+
+        <li class="step">
+          <div class="step-line-wrap">
+            <div class="step-num" aria-hidden="true">3</div>
+            <div class="step-connector" aria-hidden="true"></div>
+          </div>
+          <div class="step-content">
+            <h3 class="step-title">Stay on top of your stock</h3>
+            <p class="step-desc">
+              Check your inventory at a glance. SpoolKid highlights low spools and
+              notifies you when it's time to restock.
+            </p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="download">
+    <div class="container">
+      <h2 class="section-title">Ready to get organized?</h2>
+      <p class="section-desc">
+        Download SpoolKid for free and take control of your filament inventory today.
+      </p>
+      <div class="cta-actions">
+        <a href="#" class="btn-primary" aria-label="Download on the App Store">
+          <!-- Apple logo -->
+          <svg width="18" height="22" viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M18.068 13.752c-.032-3.24 2.647-4.8 2.768-4.876-1.508-2.206-3.852-2.508-4.684-2.54-1.99-.202-3.888 1.17-4.9 1.17-1.012 0-2.572-1.142-4.228-1.112-2.168.032-4.18 1.258-5.296 3.178C-.052 13.44.948 19.11 3.048 22.248c1.04 1.532 2.284 3.256 3.916 3.194 1.58-.064 2.172-1.016 4.08-1.016 1.908 0 2.452 1.016 4.132.984 1.698-.032 2.772-1.558 3.8-3.096a14.09 14.09 0 0 0 1.726-3.582c-.04-.016-3.302-1.266-3.634-5.02v.04ZM14.9 4.24C15.78 3.17 16.38 1.7 16.22.2c-1.28.056-2.844.854-3.756 1.9-.82.94-1.548 2.458-1.356 3.906 1.428.11 2.892-.726 3.792-1.766Z" fill="white"/>
+          </svg>
+          Download on the App Store
+        </a>
+        <a href="https://github.com/marko-p/SpoolKid" target="_blank" rel="noopener" class="btn-outline">
+          View on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-icon">🧵</span>
+        SpoolKid
+      </div>
+      <ul class="footer-links">
+        <li><a href="https://github.com/marko-p/SpoolKid" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="https://github.com/marko-p/SpoolKid/issues" target="_blank" rel="noopener">Contact</a></li>
+      </ul>
+      <p class="footer-copy">&copy; <span id="year"></span> SpoolKid. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Navbar scroll shadow
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+  </script>
+</body>
+</html>

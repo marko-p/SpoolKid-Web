@@ -1,0 +1,9 @@
+title: SpoolKid
+description: Track and manage your 3D printing filament spools with ease.
+url: "https://marko-p.github.io"
+baseurl: "/SpoolKid-Web"
+
+theme: null
+
+plugins:
+  - jekyll-seo-tag
