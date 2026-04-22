@@ -22,7 +22,7 @@ Thumbs.db
 npm-debug.log*
 
 # Initial data
-assets/
+/assets/
 
 # Misc
 .impeccable.md
