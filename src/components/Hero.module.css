@@ -1,0 +1,125 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  padding-top: var(--nav-height);
+  overflow: hidden;
+}
+
+/* Warm radial glow — subtle, not showy */
+.glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse 80% 60% at 30% 45%,
+      oklch(0.72 0.13 65 / 0.05) 0%,
+      oklch(0.72 0.13 65 / 0.015) 40%,
+      transparent 70%
+    );
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--space-2xl) var(--space-lg);
+  max-width: var(--max-width);
+  margin-inline: auto;
+  width: 100%;
+}
+
+.logo {
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-5xl);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-lg);
+  max-width: 14ch;
+}
+
+.accent {
+  color: var(--color-orange);
+}
+
+.subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  max-width: 52ch;
+  margin-bottom: var(--space-2xl);
+  line-height: 1.65;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-ms);
+}
+
+.primaryCta,
+.secondaryCta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-ms) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  transition:
+    background var(--transition-fast);
+}
+
+.primaryCta {
+  background: var(--color-orange);
+  color: var(--color-bg);
+}
+.primaryCta:hover {
+  background: var(--color-orange-hover);
+  color: var(--color-bg);
+}
+.primaryCta:active {
+  background: var(--color-orange-dark);
+  color: var(--color-bg);
+}
+
+.secondaryCta {
+  background: var(--color-card);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+.secondaryCta:hover {
+  background: var(--color-card-hover);
+  color: var(--color-text);
+}
+.secondaryCta:active {
+  background: var(--color-card);
+  color: var(--color-text);
+}
+
+/* Center on small screens where left-align would look odd */
+@media (max-width: 640px) {
+  .content {
+    align-items: center;
+    text-align: center;
+  }
+  .title {
+    max-width: none;
+  }
+  .subtitle {
+    max-width: none;
+  }
+  .ctas {
+    justify-content: center;
+  }
+}

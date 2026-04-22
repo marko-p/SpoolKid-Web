@@ -1,0 +1,141 @@
+/* TagFormats — left-aligned header */
+
+.header {
+  margin-bottom: var(--space-xl);
+  max-width: 48ch;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: var(--space-sm);
+}
+
+.subtitle {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+  max-width: 52ch;
+}
+
+/* Desktop table */
+.tableWrapper {
+  display: none;
+  overflow-x: auto;
+}
+
+@media (min-width: 768px) {
+  .tableWrapper {
+    display: block;
+  }
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+.table th,
+.table td {
+  padding: var(--space-ms) var(--space-md);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.table th {
+  font-weight: 600;
+  color: var(--color-text-tertiary);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.table tbody tr {
+  transition: background var(--transition-fast);
+}
+.table tbody tr:hover {
+  background: var(--color-bg-elevated);
+}
+
+.formatName {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.format_orange { color: var(--color-orange); }
+.format_sage   { color: var(--color-sage); }
+.format_amber  { color: var(--color-amber); }
+
+.badge {
+  display: inline-block;
+  padding: 2px var(--space-sm); /* 2px vertical is intentional — tight badge */
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.notes {
+  color: var(--color-text-secondary);
+}
+
+/* Mobile stacked view */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .cards {
+    display: none;
+  }
+}
+
+.card {
+  background: var(--color-bg);
+  padding: var(--space-md) var(--space-lg);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-xs);
+}
+
+.cardPrinters {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+  line-height: 1.65;
+}
+
+.cardNotes {
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+}
+
+/* Beta tester callout */
+.callout {
+  margin-top: var(--space-xl);
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+  line-height: 1.65;
+  max-width: 60ch;
+}
+
+.callout a {
+  color: var(--color-sage);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

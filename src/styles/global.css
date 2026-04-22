@@ -1,0 +1,186 @@
+/* ============================================================
+   SpoolKid Landing Page — Design System
+   
+   Fonts: Bricolage Grotesque (display) + Geist (body)
+   Colors: OKLCH with neutrals tinted toward brand orange (hue 65)
+   Theme: Warm dark — workshop at 9pm
+   ============================================================ */
+
+/* Metric-matched fallback fonts to reduce CLS during font swap */
+@font-face {
+  font-family: 'Bricolage Grotesque Fallback';
+  src: local('Arial');
+  ascent-override: 96%;
+  descent-override: 24%;
+  line-gap-override: 0%;
+  size-adjust: 105%;
+}
+
+@font-face {
+  font-family: 'Geist Fallback';
+  src: local('Arial');
+  ascent-override: 92%;
+  descent-override: 23%;
+  line-gap-override: 0%;
+  size-adjust: 107%;
+}
+
+:root {
+  /* ---- Brand accent (orange, hue 65) ---- */
+  /* #E8913A ≈ oklch(0.72 0.13 65) */
+  --color-orange: oklch(0.72 0.13 65);
+  --color-orange-hover: oklch(0.78 0.12 65);
+  --color-orange-dark: oklch(0.62 0.12 65);
+  --color-orange-subtle: oklch(0.72 0.13 65 / 0.12);
+
+  /* ---- Secondary accent (warm sage, hue 165 — complementary to orange) ---- */
+  --color-sage: oklch(0.70 0.10 165);
+  --color-sage-hover: oklch(0.76 0.09 165);
+  --color-sage-subtle: oklch(0.70 0.10 165 / 0.12);
+
+  /* ---- Tertiary accent (warm amber, hue 85 — adjacent to orange) ---- */
+  --color-amber: oklch(0.75 0.14 85);
+  --color-amber-subtle: oklch(0.75 0.14 85 / 0.12);
+
+  /* ---- Warm neutral surfaces (tinted toward hue 65 = brand orange) ---- */
+  --color-bg:          oklch(0.14 0.008 65);
+  --color-bg-elevated: oklch(0.19 0.008 65);
+  --color-bg-inset:    oklch(0.16 0.009 65);  /* subtle alternating section bg */
+  --color-card:        oklch(0.23 0.007 65);
+  --color-card-hover:  oklch(0.27 0.007 65);
+  --color-border:      oklch(0.28 0.006 65);
+  --color-border-warm: oklch(0.35 0.03 65);   /* warmer border for hover states */
+
+  /* ---- Text ---- */
+  --color-text:           oklch(0.95 0.005 65);
+  --color-text-secondary: oklch(0.68 0.01 65);
+  --color-text-tertiary:  oklch(0.50 0.008 65);
+
+  /* ---- Typography ---- */
+  --font-display: 'Bricolage Grotesque', 'Bricolage Grotesque Fallback', system-ui, sans-serif;
+  --font-body: 'Geist', 'Geist Fallback', system-ui, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, monospace;
+
+  /* Fluid type scale — 1.25 ratio (major third), clamp for headings
+     Each step is ×1.25 from base. xs/sm are fixed; lg+ are fluid. */
+  --text-xs:  0.8rem;     /* 12.8px — captions, badges */
+  --text-sm:  0.875rem;   /* 14px — secondary text */
+  --text-base: 1rem;      /* 16px — body */
+  --text-lg:  1.25rem;    /* 20px — lead text, intro paragraphs */
+  --text-xl:  clamp(1.25rem, 1.1rem + 0.5vw, 1.563rem);
+  --text-2xl: clamp(1.5rem, 1.2rem + 1vw, 1.953rem);
+  --text-3xl: clamp(1.75rem, 1.3rem + 1.5vw, 2.441rem);
+  --text-4xl: clamp(2rem, 1.4rem + 2vw, 3.052rem);
+  --text-5xl: clamp(2.5rem, 1.5rem + 3vw, 3.815rem);
+
+  /* ---- Spacing (4pt base) ---- */
+  --space-xs:  4px;
+  --space-sm:  8px;
+  --space-ms:  12px;   /* between sm and md — the missing step */
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+
+  /* ---- Layout ---- */
+  --max-width: 1200px;
+  --nav-height: 64px;
+
+  /* ---- Radius ---- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* ---- Easing (exponential out for entrances, in for exits) ---- */
+  --ease-out:  cubic-bezier(0.25, 1, 0.5, 1);   /* quart out */
+  --ease-in:   cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ---- Transitions ---- */
+  --transition-fast: 150ms var(--ease-out);
+  --transition-base: 250ms var(--ease-out);
+}
+
+/* ---- Reset ---- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: normal;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.65;  /* tuned for light-on-dark readability */
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--color-orange);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+a:hover {
+  color: var(--color-orange-hover);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-orange);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Skip-to-content (a11y) */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-md);
+  z-index: 1000;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-orange);
+  color: var(--color-bg);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  transition: top var(--transition-fast);
+}
+.skip-link:focus {
+  top: var(--space-md);
+  color: var(--color-bg);
+}
+
+::selection {
+  background: var(--color-orange);
+  color: var(--color-bg);
+}
