@@ -45,3 +45,5 @@ public/assets/    # Static assets served by Vite
 ## License
 
 See [LICENSE](LICENSE).
+
+*Published 2026-04-22*
