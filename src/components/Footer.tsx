@@ -31,7 +31,7 @@ export function Footer() {
         {/* Bottom row */}
         <div className={styles.bottom}>
           <p className={styles.copyright}>
-            Source available. Free for personal use. Made for the 3D printing community.
+            Open source under the MIT License. Made for the 3D printing community.
           </p>
           <p className={styles.acknowledgments}>
             Thanks to{' '}
