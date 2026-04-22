@@ -7,24 +7,28 @@ const FORMATS = [
     type: 'JSON NDEF',
     notes: 'Default format. JSON-based NDEF record.',
     printers: 'Snapmaker U1 (extended FW), OpenSpool-compatible printers',
+    color: 'orange' as const,
   },
   {
     name: 'OpenPrintTag',
     type: 'MIME NDEF',
-    notes: 'Uses application/vnd.openprinttag MIME type.',
+    notes: 'Uses application/vnd.openprinttag MIME type. Pending verification.',
     printers: 'Prusa printers with NFC spool recognition',
+    color: 'sage' as const,
   },
   {
     name: 'OpenTag3D',
     type: 'MIME NDEF',
-    notes: 'Uses application/opentag3d MIME type.',
+    notes: 'Uses application/opentag3d MIME type. Pending verification.',
     printers: 'Community standard for 3D printing NFC tags',
+    color: 'sage' as const,
   },
   {
     name: 'Anycubic ACE',
     type: 'Raw pages',
-    notes: 'Raw page writes (non-NDEF) for ACE Pro compatibility.',
+    notes: 'Raw page writes (non-NDEF) for ACE Pro compatibility. Pending verification.',
     printers: 'Anycubic ACE Pro spool holder',
+    color: 'sage' as const,
   },
 ];
 
@@ -34,7 +38,7 @@ const FORMATS = [
  */
 export function TagFormats() {
   return (
-    <Section id="formats" narrow>
+    <Section id="formats" narrow size="compact">
       <div className={styles.header}>
         <h2 className={styles.title}>Four NFC tag formats. One app.</h2>
         <p className={styles.subtitle}>
@@ -57,7 +61,7 @@ export function TagFormats() {
           <tbody>
             {FORMATS.map((f) => (
               <tr key={f.name}>
-                <td className={styles.formatName}>{f.name}</td>
+                <td className={`${styles.formatName} ${styles[`format_${f.color}`]}`}>{f.name}</td>
                 <td><span className={styles.badge}>{f.type}</span></td>
                 <td>{f.printers}</td>
                 <td className={styles.notes}>{f.notes}</td>
@@ -72,7 +76,7 @@ export function TagFormats() {
         {FORMATS.map((f) => (
           <div key={f.name} className={styles.card}>
             <div className={styles.cardHeader}>
-              <strong className={styles.formatName}>{f.name}</strong>
+              <strong className={`${styles.formatName} ${styles[`format_${f.color}`]}`}>{f.name}</strong>
               <span className={styles.badge}>{f.type}</span>
             </div>
             <p className={styles.cardPrinters}>{f.printers}</p>
@@ -80,6 +84,15 @@ export function TagFormats() {
           </div>
         ))}
       </div>
+
+      <p className={styles.callout}>
+        Only OpenSpool has been tested on real hardware so far. If you have a Prusa, Anycubic ACE
+        Pro, or another NFC-capable printer, we'd love your help validating the other formats.{' '}
+        <a href="https://github.com/marko-p/SpoolKid/issues/new" target="_blank" rel="noopener noreferrer">
+          Open an issue
+        </a>{' '}
+        to share your results.
+      </p>
     </Section>
   );
 }

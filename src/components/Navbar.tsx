@@ -1,9 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 import styles from './Navbar.module.css';
 
-/* Logo imports -- Vite resolves these to hashed URLs at build time */
 import logoLight from '/assets/spoolkid.png';
 
 const NAV_LINKS = [
@@ -13,11 +12,6 @@ const NAV_LINKS = [
   { href: '#get-started', label: 'Get Started' },
 ];
 
-/**
- * Sticky navbar with backdrop blur.
- * Collapses to a hamburger on mobile (< 768px).
- * Adds a subtle background on scroll for legibility.
- */
 export function Navbar() {
   const reduced = useReducedMotion();
   const [scrolled, setScrolled] = useState(false);
@@ -29,23 +23,48 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  /* Close mobile menu on navigation */
-  const handleLinkClick = () => setMenuOpen(false);
+  const closeMenu = useCallback(() => setMenuOpen(false), []);
+
+  /* Lock body scroll when mobile menu is open */
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
+
+  /* Close on Escape */
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeMenu();
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [menuOpen, closeMenu]);
+
+  /* Close mobile menu if viewport grows past mobile breakpoint */
+  useEffect(() => {
+    if (!menuOpen) return;
+    const mql = window.matchMedia('(min-width: 768px)');
+    const onChange = () => { if (mql.matches) closeMenu(); };
+    mql.addEventListener('change', onChange);
+    return () => mql.removeEventListener('change', onChange);
+  }, [menuOpen, closeMenu]);
 
   return (
     <nav
       className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}
-      role="navigation"
       aria-label="Main navigation"
     >
       <div className={styles.inner}>
-        {/* Brand */}
         <a href="#" className={styles.brand} aria-label="SpoolKid home">
-          <img src={logoLight} alt="" width={36} height={36} className={styles.logo} />
+          <img src={logoLight} alt="" width={32} height={32} className={styles.logo} />
           <span className={styles.brandName}>SpoolKid</span>
         </a>
 
-        {/* Desktop links */}
         <ul className={styles.links} role="list">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
@@ -56,7 +75,6 @@ export function Navbar() {
           ))}
         </ul>
 
-        {/* Mobile hamburger */}
         <button
           className={styles.hamburger}
           onClick={() => setMenuOpen(!menuOpen)}
@@ -70,21 +88,20 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu overlay */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
             id="mobile-menu"
             className={styles.mobileMenu}
-            initial={reduced ? { opacity: 1 } : { opacity: 0, y: -10 }}
+            initial={reduced ? { opacity: 1 } : { opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={reduced ? { opacity: 0 } : { opacity: 0, y: -10 }}
+            exit={reduced ? { opacity: 0 } : { opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
           >
             <ul role="list">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className={styles.mobileLink} onClick={handleLinkClick}>
+                  <a href={link.href} className={styles.mobileLink} onClick={closeMenu}>
                     {link.label}
                   </a>
                 </li>

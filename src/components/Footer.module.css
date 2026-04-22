@@ -1,7 +1,6 @@
 .footer {
-  background: var(--color-bg-elevated);
   border-top: 1px solid var(--color-border);
-  padding-block: var(--space-3xl);
+  padding-block: var(--space-2xl);
 }
 
 .container {
@@ -25,6 +24,7 @@
 }
 
 .brand strong {
+  font-family: var(--font-display);
   font-size: var(--text-xl);
   color: var(--color-text);
 }
@@ -44,8 +44,8 @@
   font-size: var(--text-xs);
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--color-text-secondary);
-  margin-bottom: var(--space-md);
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-ms);
 }
 
 .linkGroup ul {
@@ -56,9 +56,19 @@
 }
 
 .linkGroup a {
-  color: var(--color-text-tertiary);
+  color: var(--color-text-secondary);
   font-size: var(--text-sm);
   transition: color var(--transition-fast);
+  /* Ensure 44px touch target on mobile */
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+@media (min-width: 768px) {
+  .linkGroup a {
+    min-height: unset;
+  }
 }
 .linkGroup a:hover {
   color: var(--color-orange);

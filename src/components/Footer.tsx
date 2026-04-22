@@ -16,15 +16,6 @@ export function Footer() {
 
           <div className={styles.linkGroups}>
             <div className={styles.linkGroup}>
-              <h4 className={styles.groupTitle}>Project</h4>
-              <ul>
-                <li><a href="https://github.com/SnapMakerU1/SpoolKid" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-                <li><a href="https://testflight.apple.com/join/Y4BmejQk" target="_blank" rel="noopener noreferrer">TestFlight</a></li>
-                <li><a href="https://github.com/SnapMakerU1/SpoolKid/issues/new" target="_blank" rel="noopener noreferrer">Report Issue</a></li>
-              </ul>
-            </div>
-
-            <div className={styles.linkGroup}>
               <h4 className={styles.groupTitle}>Related</h4>
               <ul>
                 <li><a href="https://github.com/Donkie/Spoolman" target="_blank" rel="noopener noreferrer">Spoolman</a></li>

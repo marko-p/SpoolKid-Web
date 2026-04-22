@@ -1,0 +1,98 @@
+/* Support section */
+
+.header {
+  margin-bottom: var(--space-xl);
+  max-width: 54ch;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: var(--space-md);
+}
+
+.subtitle {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+  max-width: 54ch;
+}
+
+.subtitle + .subtitle {
+  margin-top: var(--space-ms);
+}
+
+.subtitle strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* Donation action rows — match GetStarted secondary style */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  max-width: 420px;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  text-align: left;
+  text-decoration: none;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  background: transparent;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.action:hover {
+  background: var(--color-bg-elevated);
+  border-color: var(--color-text-tertiary);
+  color: var(--color-text);
+}
+
+.action:active {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.actionIcon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--color-orange);
+}
+
+.actionLabel {
+  display: block;
+  font-weight: 600;
+  font-size: var(--text-sm);
+}
+
+.actionDesc {
+  display: block;
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  margin-top: 2px;
+}
+
+@media (max-width: 640px) {
+  .header {
+    max-width: none;
+  }
+  .actions {
+    max-width: none;
+  }
+}

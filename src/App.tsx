@@ -3,6 +3,7 @@ import { Hero } from './components/Hero';
 import { Features } from './components/Features';
 import { Screenshots } from './components/Screenshots';
 import { TagFormats } from './components/TagFormats';
+import { Support } from './components/Support';
 import { GetStarted } from './components/GetStarted';
 import { Footer } from './components/Footer';
 
@@ -29,6 +30,7 @@ export default function App() {
         <Features />
         <Screenshots />
         <TagFormats />
+        <Support />
         <GetStarted />
       </main>
 

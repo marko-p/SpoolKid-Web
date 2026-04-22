@@ -10,6 +10,10 @@ interface SectionProps {
   className?: string;
   /** Use a narrower container width */
   narrow?: boolean;
+  /** Use the inset (slightly lighter) background */
+  inset?: boolean;
+  /** Spacing size: 'compact' | 'generous' | undefined (default) */
+  size?: 'compact' | 'generous';
 }
 
 /**
@@ -18,14 +22,14 @@ interface SectionProps {
  * 2. Animates children into view on scroll via Framer Motion
  * 3. Respects prefers-reduced-motion
  */
-export function Section({ id, children, className = '', narrow }: SectionProps) {
+export function Section({ id, children, className = '', narrow, inset, size }: SectionProps) {
   const reduced = useReducedMotion();
 
   return (
     <motion.section
       id={id}
-      className={`${styles.section} ${narrow ? styles.narrow : ''} ${className}`}
-      initial={reduced ? undefined : { opacity: 0, y: 40 }}
+      className={[styles.section, size && styles[size], narrow && styles.narrow, inset && styles.inset, className].filter(Boolean).join(' ')}
+      initial={reduced ? undefined : { opacity: 0, y: 20 }}
       whileInView={reduced ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.6, ease: 'easeOut' }}

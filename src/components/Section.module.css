@@ -1,11 +1,21 @@
+/* Section spacing — fluid clamp() with size variants for rhythm */
+
 .section {
-  padding-block: var(--space-4xl);
+  padding-block: clamp(var(--space-2xl), 4vw + 1rem, var(--space-4xl));
 }
 
-@media (min-width: 768px) {
-  .section {
-    padding-block: calc(var(--space-4xl) * 1.5);
-  }
+/* Generous: opening/important sections get extra breathing room */
+.generous {
+  padding-block: clamp(var(--space-3xl), 6vw + 1rem, 120px);
+}
+
+/* Compact: quick-reference sections (tables, short content) */
+.compact {
+  padding-block: clamp(var(--space-xl), 3vw + 0.5rem, var(--space-3xl));
+}
+
+.inset {
+  background: var(--color-bg-inset);
 }
 
 .container {

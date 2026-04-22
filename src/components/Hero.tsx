@@ -13,7 +13,7 @@ export function Hero() {
 
   const fade = reduced
     ? {}
-    : { initial: { opacity: 0, y: 24 }, animate: { opacity: 1, y: 0 } };
+    : { initial: { opacity: 0, y: 14 }, animate: { opacity: 1, y: 0 } };
 
   return (
     <header className={styles.hero}>
@@ -25,8 +25,8 @@ export function Hero() {
         <motion.img
           src={logoDark}
           alt="SpoolKid app icon — a filament spool with NFC signal waves"
-          width={120}
-          height={120}
+          width={80}
+          height={80}
           className={styles.logo}
           {...fade}
           transition={{ duration: 0.6, delay: 0.1 }}
@@ -40,7 +40,7 @@ export function Hero() {
         >
           Your NFC filament tag
           <br />
-          <span className={styles.accent}>companion.</span>
+          <span className={styles.accent}>companion for iOS.</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -49,8 +49,8 @@ export function Hero() {
           {...fade}
           transition={{ duration: 0.6, delay: 0.35 }}
         >
-          Manage your 3D printing filament inventory, write NFC tags in multiple
-          formats, and keep your physical spools in sync with{' '}
+          An iOS app to manage your 3D printing filament inventory, write NFC
+          tags in multiple formats, and keep your physical spools in sync with{' '}
           <a href="https://github.com/Donkie/Spoolman" target="_blank" rel="noopener noreferrer">
             Spoolman
           </a>
@@ -79,7 +79,7 @@ export function Hero() {
             Join TestFlight Beta
           </a>
           <a
-            href="https://github.com/SnapMakerU1/SpoolKid"
+            href="https://github.com/marko-p/SpoolKid"
             className={styles.secondaryCta}
             target="_blank"
             rel="noopener noreferrer"

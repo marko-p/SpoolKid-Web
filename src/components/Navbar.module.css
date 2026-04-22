@@ -7,14 +7,13 @@
   height: var(--nav-height);
   display: flex;
   align-items: center;
-  transition: background var(--transition-base), box-shadow var(--transition-base);
+  transition: background var(--transition-base), border-color var(--transition-base);
+  border-bottom: 1px solid transparent;
 }
 
 .scrolled {
-  background: rgba(10, 10, 11, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 1px 0 var(--color-border);
+  background: var(--color-bg);
+  border-bottom-color: var(--color-border);
 }
 
 .inner {
@@ -33,6 +32,7 @@
   align-items: center;
   gap: var(--space-sm);
   color: var(--color-text);
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: var(--text-lg);
 }
@@ -45,7 +45,7 @@
 }
 
 .brandName {
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 /* Desktop links */
@@ -80,6 +80,11 @@
   border: none;
   cursor: pointer;
   padding: var(--space-sm);
+  /* Ensure 44px touch target */
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (min-width: 768px) {
@@ -113,9 +118,7 @@
   top: var(--nav-height);
   left: 0;
   right: 0;
-  background: rgba(10, 10, 11, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
   padding: var(--space-lg);
 }
@@ -128,11 +131,13 @@
 }
 
 .mobileLink {
-  display: block;
   color: var(--color-text-secondary);
   font-size: var(--text-lg);
   font-weight: 500;
   padding: var(--space-sm) 0;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
 }
 .mobileLink:hover {
   color: var(--color-text);

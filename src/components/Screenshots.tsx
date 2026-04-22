@@ -1,4 +1,3 @@
-import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 import { Section } from './Section';
@@ -26,10 +25,9 @@ const SCREENSHOTS = [
  */
 export function Screenshots() {
   const reduced = useReducedMotion();
-  const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
-    <Section id="screenshots">
+    <Section id="screenshots" inset>
       <div className={styles.header}>
         <h2 className={styles.title}>See it in action.</h2>
         <p className={styles.subtitle}>
@@ -37,7 +35,7 @@ export function Screenshots() {
         </p>
       </div>
 
-      <div className={styles.scrollContainer} ref={scrollRef} role="region" aria-label="App screenshots" tabIndex={0}>
+      <div className={styles.scrollContainer} role="region" aria-label="App screenshots" tabIndex={0}>
         {SCREENSHOTS.map((shot, i) => (
           <motion.div
             key={shot.src}
@@ -56,6 +54,11 @@ export function Screenshots() {
                 width={280}
                 height={607}
                 className={styles.screenshot}
+                onError={(e) => {
+                  // Hide the phone frame if the screenshot fails to load
+                  const frame = (e.target as HTMLElement).closest(`.${styles.frame}`);
+                  if (frame) (frame as HTMLElement).style.display = 'none';
+                }}
               />
             </div>
           </motion.div>

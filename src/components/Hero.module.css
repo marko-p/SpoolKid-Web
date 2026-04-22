@@ -4,20 +4,19 @@
   min-height: 100dvh;
   display: flex;
   align-items: center;
-  justify-content: center;
   padding-top: var(--nav-height);
   overflow: hidden;
 }
 
-/* Radial gradient spotlight */
+/* Warm radial glow — subtle, not showy */
 .glow {
   position: absolute;
   inset: 0;
   background:
     radial-gradient(
-      ellipse 60% 50% at 50% 40%,
-      rgba(232, 145, 58, 0.12) 0%,
-      rgba(232, 145, 58, 0.04) 40%,
+      ellipse 80% 60% at 30% 45%,
+      oklch(0.72 0.13 65 / 0.05) 0%,
+      oklch(0.72 0.13 65 / 0.015) 40%,
       transparent 70%
     );
   pointer-events: none;
@@ -28,30 +27,26 @@
   z-index: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
   padding: var(--space-2xl) var(--space-lg);
-  max-width: 720px;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  width: 100%;
 }
 
 .logo {
   border-radius: var(--radius-lg);
   margin-bottom: var(--space-xl);
-  box-shadow: 0 4px 32px rgba(232, 145, 58, 0.2);
 }
 
 .title {
-  font-size: var(--text-4xl);
+  font-family: var(--font-display);
+  font-size: var(--text-5xl);
   font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.025em;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   margin-bottom: var(--space-lg);
-}
-
-@media (min-width: 768px) {
-  .title {
-    font-size: var(--text-5xl);
-  }
+  max-width: 14ch;
 }
 
 .accent {
@@ -61,16 +56,15 @@
 .subtitle {
   font-size: var(--text-lg);
   color: var(--color-text-secondary);
-  max-width: 540px;
+  max-width: 52ch;
   margin-bottom: var(--space-2xl);
-  line-height: 1.7;
+  line-height: 1.65;
 }
 
 .ctas {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-md);
-  justify-content: center;
+  gap: var(--space-ms);
 }
 
 .primaryCta,
@@ -78,14 +72,12 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-sm);
-  padding: 14px 28px;
-  border-radius: var(--radius-xl);
-  font-size: var(--text-base);
+  padding: var(--space-ms) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
   font-weight: 600;
   transition:
-    background var(--transition-fast),
-    transform var(--transition-fast),
-    box-shadow var(--transition-fast);
+    background var(--transition-fast);
 }
 
 .primaryCta {
@@ -95,8 +87,10 @@
 .primaryCta:hover {
   background: var(--color-orange-hover);
   color: var(--color-bg);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgba(232, 145, 58, 0.35);
+}
+.primaryCta:active {
+  background: var(--color-orange-dark);
+  color: var(--color-bg);
 }
 
 .secondaryCta {
@@ -107,5 +101,25 @@
 .secondaryCta:hover {
   background: var(--color-card-hover);
   color: var(--color-text);
-  transform: translateY(-1px);
+}
+.secondaryCta:active {
+  background: var(--color-card);
+  color: var(--color-text);
+}
+
+/* Center on small screens where left-align would look odd */
+@media (max-width: 640px) {
+  .content {
+    align-items: center;
+    text-align: center;
+  }
+  .title {
+    max-width: none;
+  }
+  .subtitle {
+    max-width: none;
+  }
+  .ctas {
+    justify-content: center;
+  }
 }
