@@ -1,0 +1,20 @@
+.section {
+  padding-block: var(--space-4xl);
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-block: calc(var(--space-4xl) * 1.5);
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--space-lg);
+}
+
+.narrow .container {
+  max-width: 880px;
+}
