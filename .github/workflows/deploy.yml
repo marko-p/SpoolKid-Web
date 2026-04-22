@@ -1,4 +1,4 @@
-# Deploy Vite React SPA to GitHub Pages
+# Deploy Vite React SPA to GitHub Pages 
 name: Deploy to GitHub Pages
 
 on:
