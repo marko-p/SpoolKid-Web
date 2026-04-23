@@ -6,5 +6,6 @@ export default defineConfig({
   plugins: [react()],
   // GitHub Pages deploys to https://<user>.github.io/<repo>/
   // Set base to repo name for correct asset paths
-  base: '/SpoolKid-Web/',
+  // The website now lives at www.spoolkid.com, the base has to be removed or '/'
+  base: '/',
 });
