@@ -10,7 +10,7 @@ const BASE = import.meta.env.BASE_URL;
  * Screenshot metadata. Alt text is descriptive for screen readers.
  */
 const SCREENSHOTS = [
-  { src: `${BASE}assets/screenshots/onboarding.png`, alt: 'SpoolKid onboarding screen showing NFC tag format selection: OpenSpool, OpenPrintTag, OpenTag3D, and Anycubic ACE' },
+  { src: `${BASE}assets/screenshots/onboarding.png`, alt: 'SpoolKid onboarding screen showing NFC tag format selection: OpenSpool, OpenTag3D, and Anycubic ACE' },
   { src: `${BASE}assets/screenshots/connect-spoolman.png`, alt: 'Connect to Spoolman setup screen with server URL, authentication options, and certificate trust toggle' },
   { src: `${BASE}assets/screenshots/create-tag.png`, alt: 'Create Tag screen showing filament details (material, color, brand), printing parameters, and Write to NFC Tag button' },
   { src: `${BASE}assets/screenshots/manage-spoolman.png`, alt: 'Spoolman management hub with options to manage Spools, Filaments, and Vendors' },

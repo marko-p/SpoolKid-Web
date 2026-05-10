@@ -11,8 +11,8 @@ const PRIMARY_FEATURES = [
   {
     label: 'NFC Tag Writing',
     description:
-      'Read and write NTAG213/215/216 tags in four formats: OpenSpool, OpenPrintTag, OpenTag3D, and Anycubic ACE. Format auto-detected on read.',
-    detail: '4 formats supported',
+      'Read and write NTAG213/215/216 tags in three formats: OpenSpool, OpenTag3D, and Anycubic ACE. Format auto-detected on read.',
+    detail: '3 formats supported',
     color: 'orange' as const,
   },
   {

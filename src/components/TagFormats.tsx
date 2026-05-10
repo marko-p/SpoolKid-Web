@@ -10,13 +10,6 @@ const FORMATS = [
     color: 'orange' as const,
   },
   {
-    name: 'OpenPrintTag',
-    type: 'MIME NDEF',
-    notes: 'Uses application/vnd.openprinttag MIME type. Pending verification.',
-    printers: 'Prusa printers with NFC spool recognition',
-    color: 'sage' as const,
-  },
-  {
     name: 'OpenTag3D',
     type: 'MIME NDEF',
     notes: 'Uses application/opentag3d MIME type. Pending verification.',
@@ -40,7 +33,7 @@ export function TagFormats() {
   return (
     <Section id="formats" narrow size="compact">
       <div className={styles.header}>
-        <h2 className={styles.title}>Four NFC tag formats. One app.</h2>
+        <h2 className={styles.title}>Three NFC tag formats. One app.</h2>
         <p className={styles.subtitle}>
           SpoolKid auto-detects the format when reading. Choose your preferred
           write format in Settings.
@@ -86,8 +79,8 @@ export function TagFormats() {
       </div>
 
       <p className={styles.callout}>
-        Only OpenSpool has been tested on real hardware so far. If you have a Prusa, Anycubic ACE
-        Pro, or another NFC-capable printer, we'd love your help validating the other formats.{' '}
+        Only OpenSpool has been tested on real hardware so far. If you have an Anycubic ACE
+        Pro or another NFC-capable printer, we'd love your help validating the other formats.{' '}
         <a href="https://github.com/marko-p/SpoolKid/issues/new" target="_blank" rel="noopener noreferrer">
           Open an issue
         </a>{' '}
