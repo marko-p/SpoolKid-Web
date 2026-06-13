@@ -33,6 +33,9 @@ export function Footer() {
           <p className={styles.copyright}>
             Open source under the MIT License. Made for the 3D printing community.
           </p>
+          <p className={styles.contact}>
+            Built by CRM Sistemi d.o.o.
+          </p>
           <p className={styles.acknowledgments}>
             Thanks to{' '}
             <a href="https://github.com/unlucio/" target="_blank" rel="noopener noreferrer">Lucio</a> and{' '}
