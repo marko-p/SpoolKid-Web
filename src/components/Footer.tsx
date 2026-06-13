@@ -33,7 +33,7 @@ export function Footer() {
           <p className={styles.copyright}>
             Open source under the MIT License. Made for the 3D printing community.
           </p>
-          <p className={styles.contact}>
+          <p className={styles.acknowledgments}>
             Built by CRM Sistemi d.o.o.
           </p>
           <p className={styles.acknowledgments}>
