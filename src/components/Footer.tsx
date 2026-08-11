@@ -1,7 +1,7 @@
 import styles from './Footer.module.css';
 
 /**
- * Footer with open-source notice, acknowledgments, and links.
+ * Footer with source-availability notice, acknowledgments, and links.
  */
 export function Footer() {
   return (
@@ -31,7 +31,8 @@ export function Footer() {
         {/* Bottom row */}
         <div className={styles.bottom}>
           <p className={styles.copyright}>
-            Open source under the MIT License. Made for the 3D printing community.
+            Free on TestFlight. The v0.9 source snapshot remains available under the MIT License.
+            Made for the 3D printing community.
           </p>
           <p className={styles.acknowledgments}>
             Built by CRM Sistemi d.o.o.

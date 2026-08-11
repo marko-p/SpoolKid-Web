@@ -11,22 +11,22 @@ const PRIMARY_FEATURES = [
   {
     label: 'NFC Tag Writing',
     description:
-      'Read and write NTAG213/215/216 tags in three formats: OpenSpool, OpenTag3D, and Anycubic ACE. Format auto-detected on read.',
-    detail: '3 formats supported',
+      'Read and write NTAG213/215/216 tags in five formats: OpenSpool, OpenPrintTag, OpenTag3D, Anycubic ACE, and ELEGOO. Format auto-detected on read.',
+    detail: '5 formats supported',
     color: 'orange' as const,
   },
   {
     label: 'Spoolman Integration',
     description:
-      'Browse and manage Spools, Filaments, and Vendors directly from your self-hosted Spoolman instance. Full CRUD with pull-to-refresh.',
+      'Browse and manage spools, filaments, vendors, and locations directly from your self-hosted Spoolman instance. Full CRUD with pull-to-refresh.',
     detail: 'Full CRUD',
     color: 'sage' as const,
   },
   {
-    label: 'Printer Compatibility',
+    label: 'Scan Anything',
     description:
-      'Snapmaker U1 mode validates and auto-maps material types before writing. Works with extended firmware\'s OpenSpool NFC support. Other 3D printers are pending validation.',
-    detail: 'Snapmaker U1 ready',
+      'Scan a tag, a QR code, or a printed label — SpoolKid reads NFC and handles QR and text recognition in a single camera pass, then works out which spool you scanned and what to do about it.',
+    detail: 'NFC · QR · OCR',
     color: 'amber' as const,
   },
 ];
@@ -43,8 +43,23 @@ const SECONDARY_FEATURES = [
     color: 'orange' as const,
   },
   {
-    label: 'Standalone Mode',
-    description: 'Read and write NFC tags without a Spoolman connection. SpoolKid works on its own — set up Spoolman later if you want inventory sync.',
+    label: 'Works Without a Server',
+    description: 'A small on-device library lets you use SpoolKid with no Spoolman at all. Connect a server later and SpoolKid offers to migrate what you created, resolving any duplicates against what is already there.',
+    color: 'amber' as const,
+  },
+  {
+    label: 'Home Dashboard',
+    description: 'Spool fill levels, a breakdown by material, how much of your inventory is tagged, which filaments run out soonest, and total inventory value. Every card drills through to the matching spools.',
+    color: 'sage' as const,
+  },
+  {
+    label: 'Colour Filter',
+    description: 'Find spools by colour on a spectrum map, with harmony modes for complements and near-matches rather than only exact ones. Active filters show as individually clearable chips.',
+    color: 'orange' as const,
+  },
+  {
+    label: 'SpoolLink Tag Mapping',
+    description: 'Tag UIDs live in Spoolman\'s card_uids field, with no limit per spool, so your Snapmaker U1 recognises spools by tag. Older lot_nr mappings are migrated automatically the first time they are seen.',
     color: 'amber' as const,
   },
 ];

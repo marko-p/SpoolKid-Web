@@ -1,6 +1,6 @@
 # SpoolKid-Web
 
-Landing page for [SpoolKid](https://github.com/SnapMakerU1/SpoolKid) — an iOS companion app for [Spoolman](https://github.com/Donkie/Spoolman) that lets you manage filament inventory, write NFC tags, and keep your physical spools in sync with your Spoolman database.
+Landing page for [SpoolKid](https://github.com/marko-p/SpoolKid) — an iOS companion app for [Spoolman](https://github.com/Donkie/Spoolman) that lets you manage filament inventory, write NFC tags, and keep your physical spools in sync with your Spoolman database.
 
 ## Tech Stack
 

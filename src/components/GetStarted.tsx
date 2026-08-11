@@ -13,8 +13,8 @@ export function GetStarted() {
         <div className={styles.content}>
           <h2 className={styles.title}>Get started with SpoolKid.</h2>
           <p className={styles.subtitle}>
-            Join the public TestFlight beta, or build it yourself from source.
-            Found a bug? Open an issue on GitHub.
+            Join the public TestFlight beta. Found a bug, or want a feature?
+            Open an issue on GitHub — I read every one.
           </p>
 
           <div className={styles.actions}>
@@ -47,8 +47,8 @@ export function GetStarted() {
                 </svg>
               </span>
               <div>
-                <span className={styles.actionLabel}>Build from Source</span>
-                <span className={styles.actionDesc}>Clone the repo, build with Xcode</span>
+                <span className={styles.actionLabel}>Source on GitHub</span>
+                <span className={styles.actionDesc}>v0.9 snapshot, MIT licensed</span>
               </div>
             </a>
 

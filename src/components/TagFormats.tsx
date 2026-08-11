@@ -10,6 +10,13 @@ const FORMATS = [
     color: 'orange' as const,
   },
   {
+    name: 'OpenPrintTag',
+    type: 'MIME NDEF',
+    notes: 'Uses application/vnd.openprinttag MIME type. Device validation in progress.',
+    printers: 'OpenPrintTag-compatible tooling',
+    color: 'sage' as const,
+  },
+  {
     name: 'OpenTag3D',
     type: 'MIME NDEF',
     notes: 'Uses application/opentag3d MIME type. Pending verification.',
@@ -23,6 +30,13 @@ const FORMATS = [
     printers: 'Anycubic ACE Pro spool holder',
     color: 'sage' as const,
   },
+  {
+    name: 'ELEGOO',
+    type: 'Raw pages',
+    notes: 'Raw page format for ELEGOO RFID tags. Decoder built from captured tag dumps; printer-side validation pending.',
+    printers: 'ELEGOO printers with RFID spool support',
+    color: 'sage' as const,
+  },
 ];
 
 /**
@@ -33,7 +47,7 @@ export function TagFormats() {
   return (
     <Section id="formats" narrow size="compact">
       <div className={styles.header}>
-        <h2 className={styles.title}>Three NFC tag formats. One app.</h2>
+        <h2 className={styles.title}>Five NFC tag formats. One app.</h2>
         <p className={styles.subtitle}>
           SpoolKid auto-detects the format when reading. Choose your preferred
           write format in Settings.
@@ -79,8 +93,10 @@ export function TagFormats() {
       </div>
 
       <p className={styles.callout}>
-        Only OpenSpool has been tested on real hardware so far. If you have an Anycubic ACE
-        Pro or another NFC-capable printer, we'd love your help validating the other formats.{' '}
+        OpenSpool is the format I use daily, and the one with the most real-world testing. The
+        others are implemented to spec but still need validation on actual hardware — if you have
+        an Anycubic ACE Pro, an ELEGOO printer, or OpenPrintTag/OpenTag3D tooling, your findings
+        would genuinely help.{' '}
         <a href="https://github.com/marko-p/SpoolKid/issues/new" target="_blank" rel="noopener noreferrer">
           Open an issue
         </a>{' '}
