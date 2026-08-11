@@ -13,7 +13,7 @@ export function Support() {
         <p className={styles.subtitle}>
           Distributing an iOS app with NFC access requires an active Apple Developer membership —
           that's a recurring cost of <strong>~€100 per year</strong>, just to keep the TestFlight
-          beta running. There's no App Store revenue, no ads, no VC money.
+          beta running. No ads, no tracking, no investors.
         </p>
         <p className={styles.subtitle}>
           If SpoolKid saves you time or makes your filament workflow better, consider helping
