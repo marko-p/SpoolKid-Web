@@ -2,7 +2,7 @@ import { Section } from './Section';
 import styles from './Support.module.css';
 
 /**
- * Support section — honest explanation of recurring Apple Developer costs,
+ * Support section — honest explanation of the project's running costs,
  * with donation links for GitHub Sponsors and Ko-fi.
  */
 export function Support() {
@@ -12,12 +12,13 @@ export function Support() {
         <h2 className={styles.title}>Keep SpoolKid alive.</h2>
         <p className={styles.subtitle}>
           Distributing an iOS app with NFC access requires an active Apple Developer membership —
-          that's a recurring cost of <strong>~€100 per year</strong>, just to keep the TestFlight
-          beta running. No ads, no tracking, no investors.
+          and that is only one of the running costs. There is test hardware, the tags themselves,
+          and the subscriptions and services the project depends on. No ads, no tracking, no
+          investors.
         </p>
         <p className={styles.subtitle}>
           If SpoolKid saves you time or makes your filament workflow better, consider helping
-          cover the cost.
+          cover the costs.
         </p>
       </div>
 
