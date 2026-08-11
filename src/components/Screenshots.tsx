@@ -10,12 +10,13 @@ const BASE = import.meta.env.BASE_URL;
  * Screenshot metadata. Alt text is descriptive for screen readers.
  */
 const SCREENSHOTS = [
-  { src: `${BASE}assets/screenshots/onboarding.png`, alt: 'SpoolKid onboarding screen showing NFC tag format selection: OpenSpool, OpenTag3D, and Anycubic ACE' },
-  { src: `${BASE}assets/screenshots/connect-spoolman.png`, alt: 'Connect to Spoolman setup screen with server URL, authentication options, and certificate trust toggle' },
-  { src: `${BASE}assets/screenshots/create-tag.png`, alt: 'Create Tag screen showing filament details (material, color, brand), printing parameters, and Write to NFC Tag button' },
-  { src: `${BASE}assets/screenshots/manage-spoolman.png`, alt: 'Spoolman management hub with options to manage Spools, Filaments, and Vendors' },
-  { src: `${BASE}assets/screenshots/manage-filaments.png`, alt: 'Filament list showing various PLA Silk Dual and Tri Color filaments from AzureFilm with color indicators' },
-  { src: `${BASE}assets/screenshots/add-filament.png`, alt: 'Add Filament form with fields for name, material, vendor, color, physical properties, and temperatures' },
+  { src: `${BASE}assets/screenshots/onboarding.png`, alt: 'First-run setup asking you to choose the tag format that matches your printer, with OpenSpool selected' },
+  { src: `${BASE}assets/screenshots/connect-spoolman.png`, alt: 'First-run setup for connecting to a Spoolman server: URL, authentication options, and a trust-certificates toggle, with the option to skip for now' },
+  { src: `${BASE}assets/screenshots/home-dashboard.png`, alt: 'Home dashboard showing spool status across 38 spools, tag coverage, reorder-soon, a colour swatch row, and material statistics by weight' },
+  { src: `${BASE}assets/screenshots/tags-tab.png`, alt: 'Tags tab showing tag coverage at 11 percent, options to create a tag from Spoolman or manually, recent tags, and a Scan Tag button' },
+  { src: `${BASE}assets/screenshots/spoolman-tab.png`, alt: 'Spoolman tab showing a connected server, counts for spools, filaments, vendors and locations, and a list of recent spools' },
+  { src: `${BASE}assets/screenshots/manage-spools-filters.png`, alt: 'Manage Spools list with the sort and filter menu open, offering sort keys plus Filter by Color, Materials, and Show Archived' },
+  { src: `${BASE}assets/screenshots/color-filter.png`, alt: 'Filter by Color sheet in Complementary mode, showing a colour spectrum map with anchor and complement rings, a tolerance slider, and four matching spools' },
 ];
 
 /**
